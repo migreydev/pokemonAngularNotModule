@@ -1,0 +1,19 @@
+
+<h1>Lista de Pokemons</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @for (pokemon of pokemons; track pokemon.id) {
+
+        <div class="col">
+            <div class="card h-100" style="width: 12rem;">
+                <img [src]="pokemon.image.thumbnail" class="card-img-top">
+                <div class="card-body">
+                    <h3>{{pokemon.name.english}}</h3>
+                    <button  (click)="details(pokemon.id)" routerLinkActive="router-link-active" type="submit" class="btn btn-primary">View details</button>
+                    <button class="btn btn-warning" (click)="edit(pokemon.id)">Edit</button>
+                    <button class="btn btn-danger" (click)="delete(pokemon.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+        
+    }
+</div>
